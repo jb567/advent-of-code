@@ -1,7 +1,7 @@
 import Data.List
 
 topThree :: [[Int]] -> Int
-topThree elves = (Main.sum $ srt!!0) + (Main.sum $ srt!!1) + (Main.sum $ srt!!2)
+topThree elves = foldl (\x y -> x + Main.sum y) 0 $ take 3 srt
 		 where srt = reverse $ sortOn (Main.sum) elves
 
 sum :: [Int] -> Int
