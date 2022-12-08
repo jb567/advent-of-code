@@ -24,6 +24,6 @@ getInput p = do
 go :: IO()
 go = do
      board <- getInput "input.txt"
-     print $ sum $ map (\r -> length $ filter id r) (visibilityBoard board)
+     print $ length $ filter id $ concat (visibilityBoard board)
 
 
